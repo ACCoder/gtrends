@@ -13,6 +13,3 @@ At the moment, the only way to use **gtrends** is to clone this repo and run gtr
 
 1. Support for displaying repos of particular language.
 2. Support for time based fetching like week & month.
-
-# License
-MIT
