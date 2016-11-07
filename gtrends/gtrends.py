@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
@@ -12,8 +14,6 @@ print("Fetching data...")
 # make a GET request and read it's content
 a=urlopen(base_url+"/trending").read()
 
-print("Preparing parser...")
-
 # serve the above markup to BS
 b=BeautifulSoup(a,"html.parser")
 
@@ -24,6 +24,8 @@ print("Parsing..")
 
 # Next, we find all the children elements to 'ol'
 d=c.findAll("li",class_="col-12 d-block width-full py-4 border-bottom")
+
+print("Found "+str(len(d))+" repos" )
 
 # Iterate this list and print required data
 for x in d:
@@ -57,4 +59,4 @@ for x in d:
         if(type(prog_lang) != type(None)):
            print("Repo Lang.  : "+prog_lang)
         else:
-                print("Repo Lang.  : --")
+           print("Repo Lang.  : --")
